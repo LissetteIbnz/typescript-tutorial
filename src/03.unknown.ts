@@ -1,6 +1,6 @@
 export function getMessageError(error: unknown): string {
   if (error === null || error === undefined) {
-    return ""
+    return "";
   }
 
   if (typeof error === "string") {
@@ -8,12 +8,14 @@ export function getMessageError(error: unknown): string {
   }
 
   if (typeof error === "number") {
-    return error.toString()
-  }
-  
-  if (typeof error === "object") {
-    return Object.keys(error).map(key => key).join(",")
+    return error.toString();
   }
 
-  return "Something went wrong"
+  if (typeof error === "object") {
+    return Object.keys(error)
+      .map((key) => key)
+      .join(",");
+  }
+
+  return "Something went wrong";
 }

@@ -6,6 +6,7 @@
  * - ¿Quién tiene la información sobre la propiedad ID?
  */
 export type UserId = string;
+            //^?
 
 export interface User {
   id: UserId;
@@ -13,4 +14,6 @@ export interface User {
   lastName: string;
 }
 
+// Imagina que lo importamos en otro fichero...
 type Id = User["id"];
+    //^?

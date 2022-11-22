@@ -13,5 +13,11 @@ type ValidationForm<Form> = {
 
 
 const validationsUser: ValidationForm<User> = {
-  
+  // Vamos a mapear nuestro genérico 👇
 };
+
+/**
+ * Cosas interesantes a tener en cuenta
+ * - Si alguna propiedad fuera opcional, cómo la hacemos requerida? 🤔
+ * - Podemos acceder al valor real de la propiedad que estamos mapeando 💪
+ */

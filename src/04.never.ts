@@ -1,5 +1,3 @@
-export { }
-
 interface Circle {
   kind: "circle";
   radius: number;
@@ -14,7 +12,6 @@ interface Triangle {
   kind: "triangle";
   sideLength: number;
 }
-
 
 type Shape = Circle | Square; // 👉 Si agregamos el tipo Triángulo...
 
@@ -31,5 +28,17 @@ function getArea(shape: Shape) {
       return _exhaustiveCheck;
   }
 }
-// 🤔 Y si comentamos el default...
 
+
+function getAreaIf(shape: Shape) {
+  if (shape.kind === "circle") {
+    return Math.PI * shape.radius ** 2;
+  }
+
+  if (shape.kind === "square") {
+    return shape.sideLength ** 2;
+  }
+
+  const _exhaustiveCheck: never = shape;
+  return _exhaustiveCheck;
+}
